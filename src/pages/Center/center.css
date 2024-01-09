@@ -1,0 +1,6 @@
+.activeItem {
+  background-color: #fff !important;
+  border: 0px;
+  border-bottom: 2px solid #ff8c19 !important;
+  color: #ff8c19 !important;
+}

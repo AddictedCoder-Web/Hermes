@@ -1,0 +1,10 @@
+.paragraph {
+  width: 70%;
+  line-height: 27px;
+  color: rgba(16, 16, 16, 1);
+  font-size: 15px;
+  text-align: left;
+  font-family: SourceHanSansSC-regular;
+  text-indent: 2em;
+  font-weight: 300;
+}

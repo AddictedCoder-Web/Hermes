@@ -1,0 +1,90 @@
+.about {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 100px;
+}
+
+.about-h {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.about-c {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.about-p1 {
+  width: 70%;
+  line-height: 27px;
+  color: rgba(16, 16, 16, 1);
+  font-size: 15px;
+  text-align: left;
+  font-family: SourceHanSansSC-regular;
+  text-indent: 2em;
+  font-weight: 300;
+  margin-top: 20px;
+}
+
+.about-p2 {
+  width: 70%;
+  line-height: 27px;
+  color: rgba(16, 16, 16, 1);
+  font-size: 15px;
+  text-align: left;
+  font-family: SourceHanSansSC-regular;
+  text-indent: 2em;
+  font-weight: 300;
+  margin-top: 20px;
+}
+.awards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.awardsItem {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  margin: 100px 0px;
+  flex-wrap: wrap;
+}
+.pic {
+  width: 500px;
+  height: 350px;
+  background-color: #d0d0d0;
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  color: black;
+  width: 100%;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.awardsTile {
+  font-size: 25px;
+  width: 100%;
+  text-align: center;
+}
+
+.bg {
+  height: 300px;
+  background-color: #494949;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.register-context {
+  height: 50px;
+  width: 100%;
+  font-size: 25px;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 80px;
+}
