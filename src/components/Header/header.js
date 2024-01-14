@@ -1,12 +1,14 @@
-import React from "react";
-import { Menu, Image } from "antd";
+import React, { useRef } from "react";
+import { Menu, Image, Button, Modal } from "antd";
 import logoURL from "../../assets/hermesLogo.png";
 import { Link, useNavigate } from "react-router-dom";
+import { BaseModal } from "../Modal/baseModal/baseModal";
+import RegisterForm from "../Form/form";
 
 const HermesHeader = () => {
-  const navigate = useNavigate();
-  const clickEvent = (url, key) => {
-    navigate(url);
+  const ModelRef = useRef();
+  const registerClick = () => {
+    ModelRef.current?.showModal();
   };
   //header导航栏
   const headerArray = [
@@ -38,7 +40,16 @@ const HermesHeader = () => {
   ];
 
   const clickItem = (e) => {
-    localStorage.setItem("curPageKey", e.key);
+    sessionStorage.setItem("curPageKey", e.key);
+  };
+
+  const RegisterModal = () => {
+    return (
+      <BaseModal
+        ref={ModelRef}
+        ELementChildren={<RegisterForm></RegisterForm>}
+      ></BaseModal>
+    );
   };
 
   return (
@@ -53,15 +64,18 @@ const HermesHeader = () => {
         mode="horizontal"
         defaultSelectedKeys={[
           `${
-            localStorage.getItem("curPageKey")
-              ? localStorage.getItem("curPageKey")
+            sessionStorage.getItem("curPageKey")
+              ? sessionStorage.getItem("curPageKey")
               : "1"
           }`,
         ]}
         onClick={clickItem}
         items={headerArray}
       />
-      <div style={{ flex: 1 }}>登陆注册</div>
+      <div style={{ flex: 1 }}>
+        <Button onClick={registerClick}>注册</Button>
+        <RegisterModal></RegisterModal>
+      </div>
     </>
   );
 };

@@ -20,7 +20,6 @@ const IndexPage = () => {
           //组件token
           components: {
             Layout: {
-              /* here is your component tokens */
               headerBg: "#ffffff",
               headerHeight: 50,
               colorBgContainer: "#ffffff",
