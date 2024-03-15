@@ -1,28 +1,27 @@
 import HermesCarousel from "../../components/Carousel/carousel.js";
-import "./center.css";
-import educationIcon from "../../assets/education-icon.png";
-import gameIcon from "../../assets/game-icon.png";
-import mainIdeaIcon from "../../assets/mainIdea-icon.png";
-import testIcon from "../../assets/test-icon.png";
+import "./project.css";
+import developmentIcon from "../../assets/development.png";
+import planIcon from "../../assets/plan.png";
+import businessIcon from "../../assets/Business.png";
+import workIcon from "../../assets/work.png";
 import { Divider } from "antd";
 import { useState } from "react";
-import { MainIdea } from "./MainIdea/mainIdea.js";
-import { Game } from "./Game/game.js";
-import { WorkSpace } from "./WorkSpace/workSpace.js";
+import { MidTitle } from "../../components/MidTitle/midtitle.jsx";
+import { Development } from "./Development/development.jsx";
 
-const Center = () => {
+const Project = () => {
   const [curIndex, setCurIndex] = useState(0);
   //选择框
   const Select = () => {
     const selectConf = [
       {
-        icon: mainIdeaIcon,
-        text: "核心理念",
+        icon: developmentIcon,
+        text: "开发组",
         key: 1,
       },
-      { icon: gameIcon, text: "线上游戏", key: 2 },
-      { icon: educationIcon, text: "线下财商教育", key: 3 },
-      { icon: testIcon, text: "财商测评", key: 4 },
+      { icon: planIcon, text: "策划组", key: 2 },
+      { icon: businessIcon, text: "商推组", key: 3 },
+      { icon: workIcon, text: "工作坊", key: 4 },
     ];
     const SelectItem = (props) => {
       const { icon, text, index } = props;
@@ -44,8 +43,9 @@ const Center = () => {
         </>
       );
     };
+
     return (
-      <div className="flex flex-row flex-nowrap justify-center w-1/2 h-[120px] rounded-md border mb-2 mt-4 py-2 bg-white">
+      <div className="flex flex-row flex-nowrap justify-center w-1/2 h-[130px] rounded-md border mb-2 mt-4 py-2 bg-white">
         {selectConf.map((item, index) => {
           return (
             <>
@@ -65,16 +65,27 @@ const Center = () => {
     );
   };
 
+  //引导注册板块
+  const Register = () => {
+    return (
+      <div className="bg">
+        <div className="register-context">财商教育，寓教于乐</div>
+      </div>
+    );
+  };
+
   return (
     <>
       <HermesCarousel></HermesCarousel>
-      <div className="flex flex-wrap justify-center relative">
+      <MidTitle></MidTitle>
+      <div className="flex flex-wrap justify-center relative mt-[60px] mb-[150px]">
+        {/* <div className="w-full text-center">项目组展示</div> */}
         <Select></Select>
-        {curIndex === 0 ? <MainIdea></MainIdea> : null}
-        {curIndex === 1 ? <Game></Game> : null}
-        {curIndex === 2 ? <WorkSpace></WorkSpace> : null}
+        <Divider></Divider>
+        {curIndex === 0 ? <Development></Development> : null}
       </div>
+      <Register></Register>
     </>
   );
 };
-export default Center;
+export default Project;

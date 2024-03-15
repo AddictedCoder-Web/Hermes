@@ -4,7 +4,12 @@ export const BaseModal = forwardRef(function (props, ref) {
   const { ELementChildren } = props;
   const [isModalOpen, setIsModalOpen] = useState(false);
   const showModal = () => {
-    setIsModalOpen(true);
+    if (props.setModalType) {
+      props.setModalType(0);
+      setIsModalOpen(true);
+    } else {
+      setIsModalOpen(true);
+    }
   };
   const closeModal = () => {
     setIsModalOpen(false);
@@ -14,7 +19,12 @@ export const BaseModal = forwardRef(function (props, ref) {
   };
 
   const handleCancel = () => {
-    setIsModalOpen(false);
+    if (props.setModalType) {
+      props.setModalType(0);
+      setIsModalOpen(false);
+    } else {
+      setIsModalOpen(false);
+    }
   };
   useImperativeHandle(
     ref,

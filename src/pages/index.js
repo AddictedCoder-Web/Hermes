@@ -5,6 +5,7 @@ import HermesFooter from "../components/Footer/footer";
 import { Layout, ConfigProvider } from "antd";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Center from "./Center/center";
+import Project from "./Project/project";
 const { Header, Content, Footer } = Layout;
 const IndexPage = () => {
   //antd5中新加的定制主题功能：https://ant.design/docs/react/customize-theme-cn#%E4%BF%AE%E6%94%B9%E4%B8%BB%E9%A2%98%E5%8F%98%E9%87%8F
@@ -15,9 +16,9 @@ const IndexPage = () => {
           //全局token
           token: {
             colorPrimary: "#fcad20",
-            borderRadius: 2,
+            // borderRadius: 2,
           },
-          //组件token
+          // //组件token
           components: {
             Layout: {
               headerBg: "#ffffff",
@@ -43,6 +44,7 @@ const IndexPage = () => {
         <Routes>
           <Route index element={<HermesContent></HermesContent>}></Route>
           <Route path="center" element={<Center></Center>}></Route>
+          <Route path="project" element={<Project></Project>}></Route>
         </Routes>
 
         <HermesFooter></HermesFooter>

@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  [type="submit"] {
+    background-color: #fcad20;
+    color: #fff;
+    border: 0px;
+  }
+  [type="submit"]:hover {
+    color: #fff !important;
+  }
+}

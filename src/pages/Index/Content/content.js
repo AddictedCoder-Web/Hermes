@@ -1,8 +1,14 @@
 /* eslint-disable jsx-a11y/alt-text */
 import { Button, Divider } from "antd";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import HermesCarousel from "../../../components/Carousel/carousel";
 import imageUrl from "../../../assets/hermesLogo.png";
+import { BaseModal } from "../../../components/Modal/baseModal/baseModal";
+import {
+  RegisterForm,
+  LoginForm,
+  SuccessResult,
+} from "../../../components/Form/form";
 import "./content.css";
 
 const HermesContent = () => {
@@ -122,9 +128,35 @@ const HermesContent = () => {
     return (
       <div className="bg">
         <div className="register-context">财商教育，寓教于乐</div>
-        <Button className="bg-white">免费注册</Button>
+        <Button className="bg-white" onClick={() => onClick()}>
+          免费注册
+        </Button>
       </div>
     );
+  };
+
+  //注册弹窗
+  const LRModal = () => {
+    const [modalType, setModalType] = useState(1);
+    return (
+      <BaseModal
+        ref={ModelRef}
+        setModalType={setModalType}
+        ELementChildren={
+          modalType === 0 ? (
+            <LoginForm setModalType={setModalType}></LoginForm>
+          ) : modalType === 1 ? (
+            <RegisterForm setModalType={setModalType}></RegisterForm>
+          ) : (
+            <SuccessResult setModalType={setModalType}></SuccessResult>
+          )
+        }
+      ></BaseModal>
+    );
+  };
+  const ModelRef = useRef();
+  const onClick = () => {
+    ModelRef.current?.showModal();
   };
   return (
     <>
@@ -134,6 +166,7 @@ const HermesContent = () => {
       <Divider style={{ marginTop: "100px" }}></Divider>
       <Awards></Awards>
       <Register></Register>
+      <LRModal></LRModal>
     </>
   );
 };

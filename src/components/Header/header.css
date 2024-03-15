@@ -1,0 +1,6 @@
+.editInfo {
+  cursor: pointer;
+}
+.editInfo:hover {
+  color: #fcad20;
+}
