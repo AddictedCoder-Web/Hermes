@@ -1,0 +1,10 @@
+.title {
+  font-size: 16px;
+  text-align: center;
+}
+
+.system-pic {
+  width: 700px;
+  height: 700px;
+  object-fit: contain;
+}

@@ -141,7 +141,7 @@ const HermesHeader = () => {
 
       <div style={{ flex: 1 }}>
         <Space>
-          <div style={{ cursor: "pointer" }}>
+          {/* <div style={{ cursor: "pointer" }}>
             <Popover
               content={
                 localStorage.getItem("token") ? (
@@ -157,7 +157,7 @@ const HermesHeader = () => {
                 icon={<UserOutlined></UserOutlined>}
               ></Avatar>
             </Popover>
-          </div>
+          </div> */}
         </Space>
         <LRModal></LRModal>
       </div>

@@ -1,4 +1,4 @@
-import HermesCarousel from "../../components/Carousel/carousel.js";
+import HermesCarousel from "../../components/Carousel/carousel.jsx";
 import "./project.css";
 import developmentIcon from "../../assets/development.png";
 import planIcon from "../../assets/plan.png";
@@ -8,6 +8,9 @@ import { Divider } from "antd";
 import { useState } from "react";
 import { MidTitle } from "../../components/MidTitle/midtitle.jsx";
 import { Development } from "./Development/development.jsx";
+import { Planning } from "./Planning/planning.jsx";
+import { Market } from "./Market/market.jsx";
+import { WorkSpace } from "./WorkSpace/work-space.jsx";
 
 const Project = () => {
   const [curIndex, setCurIndex] = useState(0);
@@ -83,6 +86,9 @@ const Project = () => {
         <Select></Select>
         <Divider></Divider>
         {curIndex === 0 ? <Development></Development> : null}
+        {curIndex === 1 ? <Planning></Planning> : null}
+        {curIndex === 2 ? <Market></Market> : null}
+        {curIndex === 3 ? <WorkSpace></WorkSpace> : null}
       </div>
       <Register></Register>
     </>

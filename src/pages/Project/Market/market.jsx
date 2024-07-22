@@ -1,24 +1,22 @@
-import "./development.css";
+import "./market.css";
 import { useState } from "react";
 import { Divider } from "antd";
-import developmentIcon from "../../../assets/development.png";
-import planIcon from "../../../assets/plan.png";
-import businessIcon from "../../../assets/Business.png";
-import workIcon from "../../../assets/work.png";
+
 import { Paragraphs } from "../../../components/Paragraph/paragraph";
-import { GameOnline } from "./game-online";
-import { ArtWork } from "./art-work";
+import { Operations } from "./operations";
+import { Work } from "./work";
 import { Structure } from "./structure";
-export const Development = () => {
+import { Extend } from "./extend";
+export const Market = () => {
   const [curIndex, setCurIndex] = useState(0);
   const selectConf = [
     {
-      icon: developmentIcon,
-      text: "财商线上游戏",
+      text: "产品运营",
       key: 0,
     },
-    { icon: businessIcon, text: "美工组作品展示", key: 1 },
-    { icon: workIcon, text: "人员架构", key: 2 },
+    { text: "竞赛工作", key: 1 },
+    { text: "商业策划", key: 2 },
+    { text: "人员架构", key: 3 },
   ];
   //选择框
   const Select = () => {
@@ -65,11 +63,12 @@ export const Development = () => {
   };
   return (
     <>
-      <div className="w-full text-center text-xl mt-[50px]">Hermes开发组</div>
+      <div className="w-full text-center text-xl mt-[50px]">Hermes商推组</div>
       <Select></Select>
-      {curIndex === selectConf[0].key ? <GameOnline></GameOnline> : null}
-      {curIndex === selectConf[1].key ? <ArtWork></ArtWork> : null}
-      {curIndex === selectConf[2].key ? <Structure></Structure> : null}
+      {curIndex === selectConf[0].key ? <Operations></Operations> : null}
+      {curIndex === selectConf[1].key ? <Work></Work> : null}
+      {curIndex === selectConf[2].key ? <Extend></Extend> : null}
+      {curIndex === selectConf[3].key ? <Structure></Structure> : null}
     </>
   );
 };

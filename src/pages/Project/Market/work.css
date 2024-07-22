@@ -1,0 +1,36 @@
+.workPic {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.pic {
+  width: 400px;
+  height: 350px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+}
+.workPicItem {
+  width: 40%;
+  /* height: 300px; */
+  display: flex;
+  justify-content: center;
+  margin: 60px 0px 0px 0px;
+  flex-wrap: wrap;
+}
+.title {
+  color: black;
+  width: 100%;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 10px;
+}
+.pic-item {
+  object-fit: contain;
+}
+.txt {
+  color: rgba(16, 16, 16, 1);
+  font-size: 15px;
+  font-family: SourceHanSansSC-regular;
+  font-weight: 300;
+}

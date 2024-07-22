@@ -1,4 +1,4 @@
-import HermesCarousel from "../../components/Carousel/carousel.js";
+import HermesCarousel from "../../components/Carousel/carousel.jsx";
 import "./center.css";
 import educationIcon from "../../assets/education-icon.png";
 import gameIcon from "../../assets/game-icon.png";
@@ -6,9 +6,9 @@ import mainIdeaIcon from "../../assets/mainIdea-icon.png";
 import testIcon from "../../assets/test-icon.png";
 import { Divider } from "antd";
 import { useState } from "react";
-import { MainIdea } from "./MainIdea/mainIdea.js";
-import { Game } from "./Game/game.js";
-import { WorkSpace } from "./WorkSpace/workSpace.js";
+import { MainIdea } from "./MainIdea/mainIdea.jsx";
+import { Game } from "./Game/game.jsx";
+import { WorkSpace } from "./WorkSpace/workSpace.jsx";
 
 const Center = () => {
   const [curIndex, setCurIndex] = useState(0);

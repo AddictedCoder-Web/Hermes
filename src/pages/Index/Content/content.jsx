@@ -128,9 +128,9 @@ const HermesContent = () => {
     return (
       <div className="bg">
         <div className="register-context">财商教育，寓教于乐</div>
-        <Button className="bg-white" onClick={() => onClick()}>
+        {/* <Button className="bg-white" onClick={() => onClick()}>
           免费注册
-        </Button>
+        </Button> */}
       </div>
     );
   };
